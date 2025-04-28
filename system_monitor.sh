@@ -29,7 +29,7 @@ while true; do
     MEM_USAGE=$(get_mem_usage)
     DISK_USAGE=$(get_disk_usage)
 
-<<comment
+
     ALERT_MSG=""
 
     if (( $(echo "$CPU_LOAD > $CPU_THRESHOLD" | bc -l) )); then
@@ -43,7 +43,7 @@ while true; do
     if (( $(echo "$DISK_USAGE > $DISK_THRESHOLD" | bc -l) )); then
         ALERT_MSG+="[ALERT] High Disk usage: ${DISK_USAGE}%\n"
     fi
-comment
+
 
     # Display dashboard
     clear
